@@ -1,0 +1,18 @@
+build/
+dist/
+duo-animation/qa/sequence/
+research/
+# Keep personal/reference recordings out; published QA clips live under qa/.
+*.mov
+*.m4v
+*.webm
+*.mp4
+!duo-animation/qa/current/*.mp4
+.agents/
+.codex/
+.aws/
+.env
+.env.*
+*.xcuserstate
+xcuserdata/
+.DS_Store

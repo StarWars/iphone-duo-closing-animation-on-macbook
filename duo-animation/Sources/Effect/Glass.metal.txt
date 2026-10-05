@@ -1,0 +1,111 @@
+#include <metal_stdlib>
+using namespace metal;
+
+struct VertexOut { float4 position [[position]]; float2 uv; };
+struct Uniforms {
+    float4 angles;       // current, reference, perspective, softness
+    float4 style;        // shade, eye height, eye distance, aspect
+    float4 content;      // source width, height, padding, max sigma
+    float4 stage;        // preview rectangle in viewport UVs
+    float4 presentation; // preview flag, viewport width, viewport height, unused
+};
+
+vertex VertexOut glassVertex(uint id [[vertex_id]]) {
+    float2 p[3] = {float2(-1, -1), float2(3, -1), float2(-1, 3)};
+    VertexOut out;
+    out.position = float4(p[id], 0, 1);
+    out.uv = float2((p[id].x + 1) * 0.5, (1 - p[id].y) * 0.5);
+    return out;
+}
+
+float roundedBox(float2 p, float2 halfSize, float radius) {
+    float2 q = abs(p) - halfSize + radius;
+    return length(max(q, 0.0)) + min(max(q.x, q.y), 0.0) - radius;
+}
+
+fragment float4 glassFragment(VertexOut in [[stage_in]],
+                             constant Uniforms &u [[buffer(0)]],
+                             array<texture2d<float>, 7> levels [[texture(0)]]) {
+    constexpr sampler texSampler(coord::normalized, address::clamp_to_zero, filter::linear);
+    bool preview = u.presentation.x > 0.5;
+    float aspect = u.style.w;
+    // Rescale the selected trigger-to-10-degree interval to the original
+    // 80-degree visual range. The default 90-degree trigger is unchanged.
+    float delta = clamp((u.angles.y - u.angles.x) * (80.0 / max(1.0, u.angles.y - 10.0)), 0.0, 120.0);
+    float depth = clamp(u.angles.z, 0.0, 1.0);
+    // Perspective must compensate actual lid travel, not the normalized
+    // blur/fade interval. Both presentations use this same physical rotation.
+    float radians = clamp(u.angles.y - u.angles.x, 0.0, 120.0) * depth * M_PI_F / 180.0;
+    float c = cos(radians), s = sin(radians);
+    float3 eye(0, u.style.y, u.style.z);
+    float2 stageUV = (in.uv - u.stage.xy) / u.stage.zw;
+    float2 panelUV = preview ? (in.uv - u.stage.xy) / u.stage.zw : in.uv;
+    float panelCoverage = 1;
+    float frame = 0;
+    float2 sourceUV = panelUV;
+    const float3 background(0.035, 0.044, 0.060);
+
+    if (preview) {
+        // Simulate the moving physical lid around a stationary desktop plane.
+        // The real overlay uses display pixels; only the preview needs this
+        // observer-to-panel intersection and a moving frame.
+        float3 referencePoint((stageUV.x - 0.5) * aspect, 1 - stageUV.y, 0);
+        float3 ray = referencePoint - eye;
+        float3 normal(0, -s, c);
+        float denominator = dot(ray, normal);
+        if (abs(denominator) < 0.0001) return float4(background, 1);
+        float t = -dot(eye, normal) / denominator;
+        if (t <= 0) return float4(background, 1);
+        float3 point = eye + ray * t;
+        panelUV = float2(point.x / aspect + 0.5, 1 - dot(point, float3(0, c, s)));
+        float2 p = (panelUV - 0.5) * float2(aspect, 1);
+        float distance = roundedBox(p, float2(aspect, 1) * 0.5, 0.022);
+        float antialias = max(fwidth(distance), 0.0005);
+        panelCoverage = 1 - smoothstep(-antialias, antialias, distance);
+        frame = (1 - smoothstep(0.004, 0.007 + antialias, abs(distance))) *
+                (1 - smoothstep(-0.004, -0.001, distance));
+        sourceUV = stageUV;
+    } else if (radians > 0) {
+        // Project each physical panel pixel back onto the stationary reference
+        // plane. Seen through the moving lid, this is the inverse of the
+        // preview's ray-to-panel mapping, rather than a second perspective fit.
+        float h = 1 - panelUV.y;
+        float3 point((panelUV.x - 0.5) * aspect, h * c, h * s);
+        float denominator = point.z - eye.z;
+        if (abs(denominator) < 0.0001) return float4(0, 0, 0, 1);
+        float3 referencePoint = eye + (point - eye) * (-eye.z / denominator);
+        sourceUV = float2(referencePoint.x / aspect + 0.5, 1 - referencePoint.y);
+    }
+    float edgeHeight = 1 - panelUV.y;
+    float motion = smoothstep(0.0, 82.0, delta);
+    // Blur advances toward the hinge in fixed physical screen coordinates.
+    float edge = clamp(edgeHeight, 0.0, 1.0);
+    float reachesHinge = smoothstep(40.0, 80.0, delta);
+    float blurEdge = mix(edge, 1.0, reachesHinge);
+    float blur = clamp(u.angles.w * motion * pow(blurEdge, 1.35), 0.0, 1.0);
+    float shadowEdge = mix(clamp((edge - 0.2) / 0.8, 0.0, 1.0), 1.0, reachesHinge);
+    float darken = clamp(2 * u.style.x * motion * pow(shadowEdge, 1.35), 0.0, 1.0);
+    float2 paddedSize = u.content.xy + 2 * u.content.z;
+    float2 textureUV = (sourceUV * u.content.xy + u.content.z) / paddedSize;
+
+    // Actual sigma levels are 0, 1/32, 1/16, 1/8, 1/4, 1/2 and 1
+    // of maximum. Interpolate in sigma, rather than discrete bands.
+    float normalizedSigma[7] = {0, 0.03125, 0.0625, 0.125, 0.25, 0.5, 1};
+    uint upper = 1;
+    for (uint i = 1; i < 7; i++) {
+        if (blur > normalizedSigma[i]) upper = min(i + 1, 6u);
+    }
+    uint lower = upper - 1;
+    float blend = clamp((blur - normalizedSigma[lower]) /
+                        (normalizedSigma[upper] - normalizedSigma[lower]), 0.0, 1.0);
+    float4 image = mix(levels[lower].sample(texSampler, textureUV),
+                       levels[upper].sample(texSampler, textureUV), blend);
+    // Textures contain premultiplied coverage, including the padded boundary.
+    float disappear = smoothstep(62.0, 80.0, delta);
+    float3 color = image.rgb * (1 - darken) * (1 - disappear);
+    if (preview) {
+        color = mix(background, color, panelCoverage);
+        color = mix(color, float3(0.25, 0.29, 0.34), frame * 0.75);
+    }
+    return float4(color, 1);
+}

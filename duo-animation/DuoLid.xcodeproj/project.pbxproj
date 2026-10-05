@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00AEE7525F8D5D82ABC0AD15 /* PauseHotKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90441843323A90E9FFCC1B8D /* PauseHotKey.swift */; };
+		1E0FE5FE58A18259E3FC339F /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7312812C004D424FA880F5C0 /* AppController.swift */; };
+		2736732B8DA2A4E27B37B086 /* GlassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39E8C5F71B1DFE571EEC8D3 /* GlassView.swift */; };
+		32A8EF152239FF5D1E18F792 /* EULA.md in Resources */ = {isa = PBXBuildFile; fileRef = 91560638A3D164E2DAB4257F /* EULA.md */; };
+		3BA4A5C7178006BB81AE9BA3 /* OverlayWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BF5F05F41556553FEC31F0 /* OverlayWindow.swift */; };
+		3ECF3EA434C35F613B1BE926 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C59BE31BF4985DB7D42BDB /* AppDelegate.swift */; };
+		3F99250CE44A14926BD66F8B /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135EF50E66B63DAEF0EE7233 /* Verification.swift */; };
+		442F93BB55B8CFB6FFF1DC3E /* NOTICE in Resources */ = {isa = PBXBuildFile; fileRef = F3610987A3FE8B66477DDF2F /* NOTICE */; };
+		44A4299181E476963DBD4141 /* EffectState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878EE753F29B2715540C6C36 /* EffectState.swift */; };
+		468835E1D9618052CCDDD8B9 /* BackgroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D67865FA0CD2E39291881B0 /* BackgroundTests.swift */; };
+		47BC51C2EC20E95AFC4AE379 /* TriggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833BF9C0B0F069A7FD1560B4 /* TriggerTests.swift */; };
+		47F3C3B48A92BEE6A7F5C591 /* GestureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F3E2313736FDCDB6F05D5 /* GestureTests.swift */; };
+		4F90D3B2EB03912804BABF74 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 595FAD0449CCF7E4EA92E97D /* LICENSE */; };
+		692E02C420AE0E2D0B4B18F6 /* SampleDesktop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD8C8E1F8DD81BAEC9C76E6 /* SampleDesktop.swift */; };
+		9D8E702B9FB99BA630A27D38 /* AppBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = C866688FF03B6BE655565C1F /* AppBrand.swift */; };
+		AEE24F59BACA933CC37E2C74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F65C84A3239F262E60BEE46 /* Assets.xcassets */; };
+		B3F22F3DAD80652C3C1B4CD5 /* LidTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784ED4DE2F6D1CF1A26AF2B /* LidTrigger.swift */; };
+		C21DFCEB977BAD74F76DE7CC /* LidSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08938851071C0BCC2BE2B92F /* LidSensor.swift */; };
+		C32707AC21117571F0E6FB39 /* DesktopSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D65FF8A8BB3861498FDB04 /* DesktopSnapshot.swift */; };
+		C7F9812FAE39EFFB0A912575 /* GestureTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23511CEA4ECBE50A2713B04 /* GestureTracker.swift */; };
+		D27AC79ABDD21A424C7812B7 /* GlassRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF2D9D6FD2621B2246BD732 /* GlassRenderer.swift */; };
+		D567AA4047478AA122770689 /* Glass.metal.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1F43D850614B8F534752E9FE /* Glass.metal.txt */; };
+		D76910BDAF28AEE2BD45654B /* PreviewWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480214BC95900750C3EC8ACB /* PreviewWindow.swift */; };
+		D8A078E7F8C48410106129CB /* PreviewDrawingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0DDBCC00C18E8F5EC6FD09 /* PreviewDrawingTests.swift */; };
+		F3A9DE5F2CFE0CE7155181EC /* BackgroundState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09338D1CB701868F37998BF7 /* BackgroundState.swift */; };
+		F787AC270B0FB4FC4DA764AA /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A9F19BE13F9B73DD137F59 /* Entry.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7503E94025F53ACCF7EABA07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F48198E9C5ACEEE0A826E68 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A8714F186984518F05DB33F2;
+			remoteInfo = DuoLid;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08938851071C0BCC2BE2B92F /* LidSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LidSensor.swift; sourceTree = "<group>"; };
+		09338D1CB701868F37998BF7 /* BackgroundState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundState.swift; sourceTree = "<group>"; };
+		0D0DDBCC00C18E8F5EC6FD09 /* PreviewDrawingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewDrawingTests.swift; sourceTree = "<group>"; };
+		135EF50E66B63DAEF0EE7233 /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
+		1D67865FA0CD2E39291881B0 /* BackgroundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTests.swift; sourceTree = "<group>"; };
+		1F43D850614B8F534752E9FE /* Glass.metal.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Glass.metal.txt; sourceTree = "<group>"; };
+		2784ED4DE2F6D1CF1A26AF2B /* LidTrigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LidTrigger.swift; sourceTree = "<group>"; };
+		480214BC95900750C3EC8ACB /* PreviewWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewWindow.swift; sourceTree = "<group>"; };
+		4F65C84A3239F262E60BEE46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		54D65FF8A8BB3861498FDB04 /* DesktopSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesktopSnapshot.swift; sourceTree = "<group>"; };
+		595FAD0449CCF7E4EA92E97D /* LICENSE */ = {isa = PBXFileReference; path = LICENSE; sourceTree = "<group>"; };
+		63BF5F05F41556553FEC31F0 /* OverlayWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayWindow.swift; sourceTree = "<group>"; };
+		69C59BE31BF4985DB7D42BDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7312812C004D424FA880F5C0 /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
+		833BF9C0B0F069A7FD1560B4 /* TriggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggerTests.swift; sourceTree = "<group>"; };
+		878EE753F29B2715540C6C36 /* EffectState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectState.swift; sourceTree = "<group>"; };
+		8CD8C8E1F8DD81BAEC9C76E6 /* SampleDesktop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDesktop.swift; sourceTree = "<group>"; };
+		90441843323A90E9FFCC1B8D /* PauseHotKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseHotKey.swift; sourceTree = "<group>"; };
+		91560638A3D164E2DAB4257F /* EULA.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = EULA.md; sourceTree = "<group>"; };
+		A25F3E2313736FDCDB6F05D5 /* GestureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureTests.swift; sourceTree = "<group>"; };
+		A5A9F19BE13F9B73DD137F59 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		A8467FFF372F0ED22213E432 /* DuoLid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuoLid.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABF2D9D6FD2621B2246BD732 /* GlassRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassRenderer.swift; sourceTree = "<group>"; };
+		C866688FF03B6BE655565C1F /* AppBrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBrand.swift; sourceTree = "<group>"; };
+		D23511CEA4ECBE50A2713B04 /* GestureTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureTracker.swift; sourceTree = "<group>"; };
+		E39E8C5F71B1DFE571EEC8D3 /* GlassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassView.swift; sourceTree = "<group>"; };
+		E3D8300716ED85AE062F8862 /* DuoLidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DuoLidTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3610987A3FE8B66477DDF2F /* NOTICE */ = {isa = PBXFileReference; path = NOTICE; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		20A168A55BDFEAD498F32460 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C866688FF03B6BE655565C1F /* AppBrand.swift */,
+				7312812C004D424FA880F5C0 /* AppController.swift */,
+				69C59BE31BF4985DB7D42BDB /* AppDelegate.swift */,
+				09338D1CB701868F37998BF7 /* BackgroundState.swift */,
+				A5A9F19BE13F9B73DD137F59 /* Entry.swift */,
+				63BF5F05F41556553FEC31F0 /* OverlayWindow.swift */,
+				90441843323A90E9FFCC1B8D /* PauseHotKey.swift */,
+				480214BC95900750C3EC8ACB /* PreviewWindow.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		38E44836177F5C337AFF5B70 /* Verification */ = {
+			isa = PBXGroup;
+			children = (
+				135EF50E66B63DAEF0EE7233 /* Verification.swift */,
+			);
+			path = Verification;
+			sourceTree = "<group>";
+		};
+		41B47D0789916C61C3753AEB /* Lid */ = {
+			isa = PBXGroup;
+			children = (
+				D23511CEA4ECBE50A2713B04 /* GestureTracker.swift */,
+				08938851071C0BCC2BE2B92F /* LidSensor.swift */,
+				2784ED4DE2F6D1CF1A26AF2B /* LidTrigger.swift */,
+			);
+			path = Lid;
+			sourceTree = "<group>";
+		};
+		65F0DED7841BB0BC8C650D4E /* Capture */ = {
+			isa = PBXGroup;
+			children = (
+				54D65FF8A8BB3861498FDB04 /* DesktopSnapshot.swift */,
+			);
+			path = Capture;
+			sourceTree = "<group>";
+		};
+		A093E07D5CC7B53C4A2A50C4 /* Effect */ = {
+			isa = PBXGroup;
+			children = (
+				878EE753F29B2715540C6C36 /* EffectState.swift */,
+				1F43D850614B8F534752E9FE /* Glass.metal.txt */,
+				ABF2D9D6FD2621B2246BD732 /* GlassRenderer.swift */,
+				E39E8C5F71B1DFE571EEC8D3 /* GlassView.swift */,
+				8CD8C8E1F8DD81BAEC9C76E6 /* SampleDesktop.swift */,
+			);
+			path = Effect;
+			sourceTree = "<group>";
+		};
+		A27660AEFCE4850C27519690 /* iphone-duo-animation-on-macbook */ = {
+			isa = PBXGroup;
+			children = (
+				91560638A3D164E2DAB4257F /* EULA.md */,
+				595FAD0449CCF7E4EA92E97D /* LICENSE */,
+				F3610987A3FE8B66477DDF2F /* NOTICE */,
+			);
+			name = "iphone-duo-animation-on-macbook";
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B57333C4DB890F60EDDC26EE /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				20A168A55BDFEAD498F32460 /* App */,
+				65F0DED7841BB0BC8C650D4E /* Capture */,
+				A093E07D5CC7B53C4A2A50C4 /* Effect */,
+				41B47D0789916C61C3753AEB /* Lid */,
+				38E44836177F5C337AFF5B70 /* Verification */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		C58D517365E2F3016F26A01C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4F65C84A3239F262E60BEE46 /* Assets.xcassets */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D0659DC1E87E76F5DA50A453 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1D67865FA0CD2E39291881B0 /* BackgroundTests.swift */,
+				A25F3E2313736FDCDB6F05D5 /* GestureTests.swift */,
+				0D0DDBCC00C18E8F5EC6FD09 /* PreviewDrawingTests.swift */,
+				833BF9C0B0F069A7FD1560B4 /* TriggerTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		D854DAC801DD2DF736BB8FD9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A8467FFF372F0ED22213E432 /* DuoLid.app */,
+				E3D8300716ED85AE062F8862 /* DuoLidTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EAF5199893D0E00B1D32E9F2 = {
+			isa = PBXGroup;
+			children = (
+				C58D517365E2F3016F26A01C /* App */,
+				A27660AEFCE4850C27519690 /* iphone-duo-animation-on-macbook */,
+				B57333C4DB890F60EDDC26EE /* Sources */,
+				D0659DC1E87E76F5DA50A453 /* Tests */,
+				D854DAC801DD2DF736BB8FD9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		480C274D35641639FCF05D9D /* DuoLidTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 66E12391D384D2C5FD68D0A9 /* Build configuration list for PBXNativeTarget "DuoLidTests" */;
+			buildPhases = (
+				9F24A74F10E00A652F1569C8 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26D6C729BA2ABC49539E9AA7 /* PBXTargetDependency */,
+			);
+			name = DuoLidTests;
+			productName = DuoLidTests;
+			productReference = E3D8300716ED85AE062F8862 /* DuoLidTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A8714F186984518F05DB33F2 /* DuoLid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2EC10071E76E237F35CF013B /* Build configuration list for PBXNativeTarget "DuoLid" */;
+			buildPhases = (
+				FEF9E61B8E510FBE82B221CF /* Sources */,
+				43C02215114B71A5FEF0A5F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DuoLid;
+			productName = DuoLid;
+			productReference = A8467FFF372F0ED22213E432 /* DuoLid.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F48198E9C5ACEEE0A826E68 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					480C274D35641639FCF05D9D = {
+						ProvisioningStyle = Manual;
+					};
+					A8714F186984518F05DB33F2 = {
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = EA1B60F0FC6AB970AD29F751 /* Build configuration list for PBXProject "DuoLid" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = EAF5199893D0E00B1D32E9F2;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A8714F186984518F05DB33F2 /* DuoLid */,
+				480C274D35641639FCF05D9D /* DuoLidTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		43C02215114B71A5FEF0A5F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AEE24F59BACA933CC37E2C74 /* Assets.xcassets in Resources */,
+				32A8EF152239FF5D1E18F792 /* EULA.md in Resources */,
+				D567AA4047478AA122770689 /* Glass.metal.txt in Resources */,
+				4F90D3B2EB03912804BABF74 /* LICENSE in Resources */,
+				442F93BB55B8CFB6FFF1DC3E /* NOTICE in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9F24A74F10E00A652F1569C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				468835E1D9618052CCDDD8B9 /* BackgroundTests.swift in Sources */,
+				47F3C3B48A92BEE6A7F5C591 /* GestureTests.swift in Sources */,
+				D8A078E7F8C48410106129CB /* PreviewDrawingTests.swift in Sources */,
+				47BC51C2EC20E95AFC4AE379 /* TriggerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEF9E61B8E510FBE82B221CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D8E702B9FB99BA630A27D38 /* AppBrand.swift in Sources */,
+				1E0FE5FE58A18259E3FC339F /* AppController.swift in Sources */,
+				3ECF3EA434C35F613B1BE926 /* AppDelegate.swift in Sources */,
+				F3A9DE5F2CFE0CE7155181EC /* BackgroundState.swift in Sources */,
+				C32707AC21117571F0E6FB39 /* DesktopSnapshot.swift in Sources */,
+				44A4299181E476963DBD4141 /* EffectState.swift in Sources */,
+				F787AC270B0FB4FC4DA764AA /* Entry.swift in Sources */,
+				C7F9812FAE39EFFB0A912575 /* GestureTracker.swift in Sources */,
+				D27AC79ABDD21A424C7812B7 /* GlassRenderer.swift in Sources */,
+				2736732B8DA2A4E27B37B086 /* GlassView.swift in Sources */,
+				C21DFCEB977BAD74F76DE7CC /* LidSensor.swift in Sources */,
+				B3F22F3DAD80652C3C1B4CD5 /* LidTrigger.swift in Sources */,
+				3BA4A5C7178006BB81AE9BA3 /* OverlayWindow.swift in Sources */,
+				00AEE7525F8D5D82ABC0AD15 /* PauseHotKey.swift in Sources */,
+				D76910BDAF28AEE2BD45654B /* PreviewWindow.swift in Sources */,
+				692E02C420AE0E2D0B4B18F6 /* SampleDesktop.swift in Sources */,
+				3F99250CE44A14926BD66F8B /* Verification.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		26D6C729BA2ABC49539E9AA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A8714F186984518F05DB33F2 /* DuoLid */;
+			targetProxy = 7503E94025F53ACCF7EABA07 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		169D11E5B3EF12899A8385EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pl.appbeat.DuoLidTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DuoLid.app/Contents/MacOS/DuoLid";
+			};
+			name = Debug;
+		};
+		2929DA7984CFC9EB46D2E523 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pl.appbeat.DuoLidTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DuoLid.app/Contents/MacOS/DuoLid";
+			};
+			name = Release;
+		};
+		847A012E60F5502767525264 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		A9FE5C34F1F15F44FE8B3DAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pl.appbeat.DuoLid;
+				PRODUCT_NAME = DuoLid;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BA0BE4AD4D27134AFD205012 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = pl.appbeat.DuoLid;
+				PRODUCT_NAME = DuoLid;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FD63EB8FA3BBE1ED05FE8BF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = nonisolated;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2EC10071E76E237F35CF013B /* Build configuration list for PBXNativeTarget "DuoLid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA0BE4AD4D27134AFD205012 /* Debug */,
+				A9FE5C34F1F15F44FE8B3DAE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		66E12391D384D2C5FD68D0A9 /* Build configuration list for PBXNativeTarget "DuoLidTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				169D11E5B3EF12899A8385EB /* Debug */,
+				2929DA7984CFC9EB46D2E523 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EA1B60F0FC6AB970AD29F751 /* Build configuration list for PBXProject "DuoLid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD63EB8FA3BBE1ED05FE8BF5 /* Debug */,
+				847A012E60F5502767525264 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F48198E9C5ACEEE0A826E68 /* Project object */;
+}

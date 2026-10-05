@@ -1,0 +1,71 @@
+name: DuoLid
+options:
+  bundleIdPrefix: pl.appbeat
+  deploymentTarget:
+    macOS: "14.0"
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    SWIFT_DEFAULT_ACTOR_ISOLATION: nonisolated
+    CODE_SIGN_IDENTITY: "-"
+    CODE_SIGN_STYLE: Manual
+    ENABLE_HARDENED_RUNTIME: YES
+    ENABLE_APP_SANDBOX: NO
+targets:
+  DuoLid:
+    type: application
+    platform: macOS
+    sources:
+      - path: Sources
+        excludes:
+          - Effect/Glass.metal.txt
+      - path: Sources/Effect/Glass.metal.txt
+        buildPhase: resources
+      - path: App/Assets.xcassets
+      - path: ../EULA.md
+        buildPhase: resources
+      - path: ../NOTICE
+        buildPhase: resources
+      - path: ../LICENSE
+        buildPhase: resources
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: Duo Lid
+        CFBundleName: Duo Lid
+        CFBundleShortVersionString: "0.7.2"
+        CFBundleVersion: "13"
+        LSUIElement: true
+        LSApplicationCategoryType: public.app-category.utilities
+        NSPrincipalClass: NSApplication
+        NSHighResolutionCapable: true
+        NSScreenCaptureUsageDescription: "Duo Lid uses a temporary image of your desktop for the lid effect. Images stay on your Mac and are not saved."
+        NSHumanReadableCopyright: "© 2026 Michal Stawarz @ appbeat.pl"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: pl.appbeat.DuoLid
+        PRODUCT_NAME: DuoLid
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+      configs:
+        Release:
+          CODE_SIGN_INJECT_BASE_ENTITLEMENTS: NO
+  DuoLidTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - Tests
+    dependencies:
+      - target: DuoLid
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  DuoLid:
+    build:
+      targets:
+        DuoLid: all
+        DuoLidTests: [test]
+    test:
+      targets:
+        - DuoLidTests
